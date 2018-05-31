@@ -1,0 +1,169 @@
+---
+layout: stackpage
+title: ASP.NET Core
+type: stack
+description: Everything around ASP.NET Core and the core parts of it
+permalink: "aspnetcore/"
+feed: "feed"
+---
+{% include CheckForEmptyData.html data=site.data.DotNetCore %}
+
+<section>
+    <h2><strong>//</strong> ASP.NET Blog &amp; Tweets</h2>
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="list-group">
+                <a href="https://blogs.msdn.microsoft.com/webdev" class="list-group-item active">
+                    <h4 class="list-group-item-heading">.NET Web Development and Tools Blog</h4>
+                </a>
+				
+				{% for feedItem in site.data.AspNetCore.Data.Blog.FeedItems limit: 5 %}
+					{% include DisplayFeedItem.html feedItem=feedItem %}
+				{% endfor %}
+            </div>
+        </div>
+		
+		
+    </div>
+	
+	<div class="row"> 
+        <div class="col-md-12">
+            <div class="list-group">
+                <a href="https://twitter.com/aspnet" class="list-group-item active">
+                    <h4 class="list-group-item-heading">@aspnet on Twitter</h4>
+                </a>
+				
+				{% for tweetItem in site.data.AspNetCore.Data.Twitter.Tweets limit: 10 %}
+					{% include DisplayTweetItem.html tweetItem=tweetItem %}
+				{% endfor %}
+            </div>
+        </div>
+	</div>
+	
+</section>
+
+<section>
+    <h2><strong>//</strong> GitHub</h2>
+
+	<div class="row">
+	<div class="col-md-12">
+
+            <div class="list-group">
+                <a href="https://github.com/aspnet/Announcements" class="list-group-item active">
+                    <h4 class="list-group-item-heading">aspnet/Announcements</h4>
+                </a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Announcements.Events limit: 10 %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+        </div>
+		
+		<div class="col-md-12">
+
+            <div class="list-group">
+                <a href="https://github.com/aspnet/Home" class="list-group-item active">
+                    <h4 class="list-group-item-heading">aspnet/Home</h4>
+                </a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Home.Events limit: 10 %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+        </div>
+	</div>
+	
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#Mvc">Mvc</a></li>
+		<li><a data-toggle="tab" href="#Razor">Razor</a></li>
+		<li><a data-toggle="tab" href="#SignalR">SignalR</a></li>
+		<li><a data-toggle="tab" href="#Identity">Identity</a></li>
+		<li><a data-toggle="tab" href="#Kestrel">Kestrel</a></li>
+		<li><a data-toggle="tab" href="#Templates">Templates</a></li>
+		<li><a data-toggle="tab" href="#Tooling">Tooling</a></li>
+	</ul>
+	
+	<div class="tab-content">
+		<br>
+		<div id="Mvc" class="tab-pane fade in active">
+			<div class="list-group">
+                <a href="https://github.com/aspnet/Mvc" class="list-group-item active">
+                    <h4 class="list-group-item-heading">aspnet/Mvc</h4>
+                </a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Mvc.Events %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+		</div>
+		<div id="Razor" class="tab-pane fade in">
+			<div class="list-group">
+                <a href="https://github.com/aspnet/Razor" class="list-group-item active">
+                    <h4 class="list-group-item-heading">aspnet/Razor</h4>
+                </a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Razor.Events %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+		</div>
+		<div id="SignalR" class="tab-pane fade in">
+			<div class="list-group">
+                <a href="https://github.com/aspnet/SignalR" class="list-group-item active">
+                    <h4 class="list-group-item-heading">aspnet/SignalR</h4>
+                </a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.SignalR.Events %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+		</div>
+		<div id="Identity" class="tab-pane fade in">
+			<div class="list-group">
+                <a href="https://github.com/aspnet/Identity" class="list-group-item active">
+                    <h4 class="list-group-item-heading">aspnet/Identity</h4>
+                </a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Identity.Events %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+		</div>
+		<div id="Kestrel" class="tab-pane fade in">
+			<div class="list-group">
+                		<a href="https://github.com/aspnet/KestrelHttpServer" class="list-group-item active">
+                    			<h4 class="list-group-item-heading">aspnet/KestrelHttpServer</h4>
+                		</a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Kestrel.Events %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+		</div>
+		<div id="Templates" class="tab-pane fade in">
+			<div class="list-group">
+                		<a href="https://github.com/aspnet/Templates" class="list-group-item active">
+                    			<h4 class="list-group-item-heading">aspnet/Templates</h4>
+                		</a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Templates.Events %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+		</div>
+		<div id="Tooling" class="tab-pane fade in">
+			<div class="list-group">
+                		<a href="https://github.com/aspnet/Tooling" class="list-group-item active">
+                    			<h4 class="list-group-item-heading">aspnet/Tooling</h4>
+                		</a>
+				
+				{% for eventItem in site.data.AspNetCore.Data.Tooling.Events %}
+					{% include DisplayGitHubEventItem.html eventItem=eventItem %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

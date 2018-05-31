@@ -1,0 +1,53 @@
+# This is the default format.
+# For more see: http://jekyllrb.com/docs/permalinks/
+permalink: /:year/:month/:day/:title/
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "LICENSE.txt", "_stage"]
+highlighter: rouge
+
+# https://help.github.com/articles/migrating-your-pages-site-from-maruku
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+future: true
+
+include: ['_pages']
+
+# https://jekyllrb.com/docs/troubleshooting/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Themes are encouraged to use these universal variables
+# so be sure to set them if your theme uses them.
+#
+title : KnowYourStack
+tagline: Your Hub for your Stack
+author :
+  name : Code Inside Team
+  email : contact@codeinside.eu
+  github : code-inside
+  twitter : codeinsideblog
+  facebook: codeinsideblog
+
+# The production_url is only used when full-domain names are needed
+# such as sitemap.txt
+# Most places will/should use BASE_PATH to make the urls
+#
+# If you have set a CNAME (pages.github.com) set your custom domain here.
+# Else if you are pushing to username.github.io, replace with your username.
+# Finally if you are pushing to a GitHub project page, include the project name at the end.
+#
+production_url : https://www.knowyourstack.com
+
+github_repo_url: https://github.com/Code-Inside/KnowYourStack/
+
+google_analytics_id: 'UA-1562299-3'

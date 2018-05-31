@@ -1,0 +1,83 @@
+---
+title : ASP.NET Core Daily Summary
+stack: "aspnetcore"
+permalink: "aspnetcore/feed/"
+---
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>{{ site.title }}: {{ page.title }}</title>
+        <description>{{ site.title }} - {{ site.author.name }}</description>
+        <link>{{ site.production_url }}/{{ page.permalink }}</link>
+        <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <ttl>1800</ttl>
+
+        <item>
+                <title>{{ page.title | xml_escape  }}</title>
+                <description><![CDATA[
+                    <h1>ASP.NET Blog &amp; Tweets</h1>
+				
+				    {% for feedItem in site.data.AspNetCore.Data.Blog.FeedItems limit: 5 %}
+                         {% include DisplayFeedItemFeed.html eventItem=feedItem %}
+				    {% endfor %}
+				
+				    {% for feedItem in site.data.AspNetCore.Data.Twitter.Tweets limit: 5 %}
+                         {% include DisplayTweetItemFeed.html tweetItem=tweetItem %}
+				    {% endfor %}
+
+                    <h1>GitHub</h1>
+                    <h2>aspnet/Announcements</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Announcements.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+               
+                    <h2>aspnet/Home</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Home.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                    <h2>aspnet/Mvc</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Mvc.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                    <h2>aspnet/Razor</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Razor.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                    <h2>aspnet/SignalR</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.SignalR.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                    <h2>aspnet/Identity</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Identity.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                    <h2>aspnet/Kestrel</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Kestrel.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                    <h2>aspnet/Templates</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Templates.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                    <h2>aspnet/Tooling</h2>
+				    {% for eventItem in site.data.AspNetCore.Data.Tooling.Events %}
+                        {% include DisplayGitHubEventItemFeed.html eventItem=eventItem %}
+				    {% endfor %}
+
+                ]]></description>
+                <link>{{ site.production_url }}/{{page.stack}}/</link>
+                <guid isPermaLink="false">{{ site.production_url }}/{{page.stack}}/{{ site.time | date: "%Y/%m/%d" }}</guid>
+                <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        </item>
+
+</channel>
+</rss>

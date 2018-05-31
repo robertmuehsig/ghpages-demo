@@ -1,0 +1,19 @@
+language: ruby
+script: "bundle exec jekyll build"
+
+rvm:
+- 2.1
+
+branches:
+  only:
+  - master
+
+deploy:
+  provider: pages
+  repo: robertmuehsig/ghpages-demo
+  target-branch: master
+  skip-cleanup: true
+  github-token: $GHKey  # Set in the settings page of your repository, as a secure variable
+  keep-history: false
+  on:
+    branch: master
